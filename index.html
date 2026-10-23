@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="calculator">
+        <div class="icon">💎</div>
+        <h1>Tip Calculator</h1>
+        <p class="subtitle">Calculate your tip and split the bill easily.</p>
+
+        <form id="tipForm">
+            <label for="billAmount">Bill Amount (₹)</label>
+            <input type="number" id="billAmount" placeholder="Enter bill amount" min="0" step="0.01" required>
+
+            <label>Choose Tip Percentage</label>
+            <div class="tip-options">
+                <button type="button" class="tip-btn" data-tip="5">5%</button>
+                <button type="button" class="tip-btn active" data-tip="10">10%</button>
+                <button type="button" class="tip-btn" data-tip="15">15%</button>
+                <button type="button" class="tip-btn" data-tip="20">20%</button>
+            </div>
+
+            <label for="customTip">Custom Tip (%)</label>
+            <input type="number" id="customTip" placeholder="Optional custom percentage" min="0" max="100" step="0.1">
+
+            <label for="people">Number of People</label>
+            <input type="number" id="people" value="1" min="1" step="1" required>
+
+            <button type="submit" class="calculate-btn">Calculate Tip</button>
+            <p id="error" role="alert"></p>
+        </form>
+
+        <section class="results" aria-live="polite">
+            <div class="result-row">
+                <span>Tip Amount</span>
+                <strong id="tipAmount">₹0.00</strong>
+            </div>
+            <div class="result-row">
+                <span>Total Bill</span>
+                <strong id="totalBill">₹0.00</strong>
+            </div>
+            <div class="result-row highlight">
+                <span>Per Person</span>
+                <strong id="perPerson">₹0.00</strong>
+            </div>
+        </section>
+
+        <button type="button" id="resetBtn" class="reset-btn">Reset</button>
+        <p class="footer">Made with 💜 for smarter bill splitting</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
